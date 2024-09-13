@@ -1,10 +1,7 @@
-# src/masks/masks.py
-
-
 def get_mask_card_number(card_number: int) -> str:
-    """Returns masked bank card number.
+    """Возвращает маскированный номер банковской карты.
 
-    Format: XXXX XX** **** XXXX
+    Формат: XXXX XX** **** XXXX
     """
     card_str = str(card_number)
     masked = card_str[:4] + " " + card_str[4:6] + "** **** " + card_str[-4:]
@@ -12,9 +9,9 @@ def get_mask_card_number(card_number: int) -> str:
 
 
 def get_mask_account(account_number: int) -> str:
-    """Returns masked bank account number.
+    """Возвращает маскированный номер банковского счета.
 
-    Format: **XXXX
+    Формат: **XXXX
     """
     account_str = str(account_number)
     masked = "**" + account_str[-4:]

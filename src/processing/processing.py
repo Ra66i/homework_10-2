@@ -1,7 +1,23 @@
 def filter_by_state(transactions, state='EXECUTED'):
-    """Filter transactions by state."""
-    return [transaction for transaction in transactions if transaction['state'] == state]
+    """
+    Фильтрация транзакций по состоянию.
+
+    Параметры:
+    transactions (list): Список транзакций для фильтрации.
+    state (str, optional): Состояние для фильтрации. По умолчанию 'EXECUTED'.
+
+    Возвращает:
+    list: Список транзакций, соответствующих указанному состоянию.
+    """
 
 def sort_by_date(transactions, reverse=True):
-    """Sort transactions by date."""
-    return sorted(transactions, key=lambda x: x['date'], reverse=reverse)
+    """
+    Сортировка транзакций по дате.
+
+    Параметры:
+    transactions (list): Список транзакций для сортировки.
+    reverse (bool, optional): Если True, сортировка в порядке убывания. По умолчанию True.
+
+    Возвращает:
+    list: Отсортированный список транзакций по дате.
+    """
