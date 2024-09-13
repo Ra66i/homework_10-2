@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0ec0faa-eb4d-441d-a21b-eca2ff6a2938" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widget/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/widget/widget.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_masks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_processing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_widget.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/masks/masks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/masks/masks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processing/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/processing/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processing/processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/processing/processing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
