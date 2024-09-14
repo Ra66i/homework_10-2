@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0ec0faa-eb4d-441d-a21b-eca2ff6a2938" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/src/generators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_generators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_masks.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_masks.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +52,8 @@
     "Python.test_processing.executor": "Run",
     "Python.test_widget.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "homework",
+    "git-widget-placeholder": "generators",
+    "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/rabbi/PycharmProjects/homework_10-2/src/masks"
   }
 }]]></component>
@@ -58,6 +62,7 @@
       <recent name="C:\Users\rabbi\PycharmProjects\homework_10-2\src\masks" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rabbi\PycharmProjects\homework_10-2\src" />
       <recent name="C:\Users\rabbi\PycharmProjects\homework_10-2" />
       <recent name="C:\Users\rabbi\PycharmProjects\homework_10-2\src\widget" />
       <recent name="C:\Users\rabbi\PycharmProjects\homework_10-2\src\processing" />
