@@ -124,3 +124,30 @@ for card_number in card_number_generator(1, 5):
 0000 0000 0000 0003
 0000 0000 0000 0004
 0000 0000 0000 0005
+
+Тестирование
+В этом разделе представлены результаты тестирования функций filter_by_state и sort_by_date из модуля processing.
+
+Результаты тестирования
+Тестирование проводилось с использованием фреймворка pytest и охватывало все функции из модуля processing. Результаты тестирования представлены в следующем отчете:
+
+Testing started at 11:43 ...
+Launching pytest with arguments --no-header --no-summary -q in C:\Users\rabbi\PycharmProjects\homework_10-2
+
+============================= test session starts =============================
+collecting ... collected 4 items
+
+tests/test_generators.py::test_filter_by_currency[USD-expected_result0] PASSED [ 25%]
+tests/test_generators.py::test_transaction_descriptions[transactions0-expected_result0] PASSED [ 50%]
+tests/test_processing.py::test_sort_by_date[expected_ids0-True] PASSED   [ 75%]
+tests/test_processing.py::test_sort_by_date[expected_ids1-False] PASSED  [100%]
+
+============================== 4 passed in 0.03s ==============================
+
+Process finished with exit code 0
+
+Все тесты прошли успешно, что свидетельствует о правильной работе функций filter_by_state и sort_by_date.
+
+Вывод
+Результаты тестирования показывают, что функции filter_by_state и sort_by_date из модуля processing работают корректно и соответствуют заданным требованиям.
+
