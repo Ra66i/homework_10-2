@@ -9,6 +9,11 @@ def filter_by_state(transactions, state='EXECUTED'):
     Возвращает:
     list: Список транзакций, соответствующих указанному состоянию.
     """
+    filtered = []
+    for transaction in transactions:
+        if transaction['state'] == state:
+            filtered.append(transaction)
+    return filtered if filtered else []
 
 def sort_by_date(transactions, reverse=True):
     """
@@ -21,3 +26,7 @@ def sort_by_date(transactions, reverse=True):
     Возвращает:
     list: Отсортированный список транзакций по дате.
     """
+    if not transactions:
+        return []
+    sorted_transactions = sorted(transactions, key=lambda t: t['date'], reverse=reverse)
+    return sorted_transactions
