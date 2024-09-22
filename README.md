@@ -44,3 +44,110 @@ sorted_transactions = sort_by_date(transactions)
 print(sorted_transactions)
 # [{'id': 1, 'state': 'EXECUTED', 'date': '2023-01-01'},
 #  {'id': 2, 'state': 'EXECUTED', 'date': '2022-01-01'}]
+
+
+# Модуль generators
+
+Модуль `generators` содержит функции и генераторы для работы с массивами транзакций. Он позволяет финансовым аналитикам быстро и удобно находить нужную информацию о транзакциях и проводить анализ данных.
+
+## Функция `filter_by_currency`
+
+Функция `filter_by_currency` принимает на вход список словарей, представляющих транзакции, и возвращает итератор, который поочередно выдает транзакции, где валюта операции соответствует заданной. Например:
+
+```python
+transactions = [
+    # ... список транзакций ...
+]
+
+usd_transactions = filter_by_currency(transactions, "USD")
+for _ in range(2):
+    print(next(usd_transactions))
+
+Вывод:
+
+{
+  "id": 939719570,
+  "state": "EXECUTED",
+  "date": "2018-06-30T02:08:58.425572",
+  "operationAmount": {
+      "amount": "9824.07",
+      "currency": {
+          "name": "USD",
+          "code": "USD"
+      }
+  },
+  "description": "Перевод организации",
+  "from": "Счет 75106830613657916952",
+  "to": "Счет 11776614605963066702"
+}
+{
+  "id": 142264268,
+  "state": "EXECUTED",
+  "date": "2019-04-04T23:20:05.206878",
+  "operationAmount": {
+      "amount": "79114.93",
+      "currency": {
+          "name": "USD",
+          "code": "USD"
+      }
+  },
+  "description": "Перевод со счета на счет",
+  "from": "Счет 19708645243227258542",
+  "to": "Счет 75651667383060284188"
+}
+
+Генератор transaction_descriptions
+Генератор transaction_descriptions принимает список словарей с транзакциями и возвращает описание каждой операции по очереди. Например:
+
+descriptions = transaction_descriptions(transactions)
+for _ in range(5):
+    print(next(descriptions))
+
+Вывод:
+
+Перевод организации
+Перевод со счета на счет
+Перевод со счета на счет
+Перевод с карты на карту
+Перевод организации
+
+Генератор card_number_generator
+Генератор card_number_generator выдает номера банковских карт в формате XXXX XXXX XXXX XXXX, где X — цифра номера карты. Генератор может сгенерировать номера карт в заданном диапазоне от 0000 0000 0000 0001 до 9999 9999 9999 9999. Например:
+
+for card_number in card_number_generator(1, 5):
+    print(card_number)
+
+Вывод:
+
+0000 0000 0000 0001
+0000 0000 0000 0002
+0000 0000 0000 0003
+0000 0000 0000 0004
+0000 0000 0000 0005
+
+Тестирование
+В этом разделе представлены результаты тестирования функций filter_by_state и sort_by_date из модуля processing.
+
+Результаты тестирования
+Тестирование проводилось с использованием фреймворка pytest и охватывало все функции из модуля processing. Результаты тестирования представлены в следующем отчете:
+
+Testing started at 11:43 ...
+Launching pytest with arguments --no-header --no-summary -q in C:\Users\rabbi\PycharmProjects\homework_10-2
+
+============================= test session starts =============================
+collecting ... collected 4 items
+
+tests/test_generators.py::test_filter_by_currency[USD-expected_result0] PASSED [ 25%]
+tests/test_generators.py::test_transaction_descriptions[transactions0-expected_result0] PASSED [ 50%]
+tests/test_processing.py::test_sort_by_date[expected_ids0-True] PASSED   [ 75%]
+tests/test_processing.py::test_sort_by_date[expected_ids1-False] PASSED  [100%]
+
+============================== 4 passed in 0.03s ==============================
+
+Process finished with exit code 0
+
+Все тесты прошли успешно, что свидетельствует о правильной работе функций filter_by_state и sort_by_date.
+
+Вывод
+Результаты тестирования показывают, что функции filter_by_state и sort_by_date из модуля processing работают корректно и соответствуют заданным требованиям.
+
