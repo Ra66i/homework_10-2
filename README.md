@@ -1,22 +1,34 @@
-# Банковский виджет операций клиента
-
-## Описание
-
+Банковский виджет операций клиента
+Описание
 Этот проект разрабатывается для отображения последних банковских операций клиента в его личном кабинете.
 
-## Установка
+Установка
+Клонируйте репозиторий:
+bash
 
-1. Клонируйте репозиторий:
+Verify
 
-```bash
+Open In Editor
+Edit
+Copy code
 git clone https://github.com/Ra66i/homework_10-2.git
 cd project-folder
-
-Использование
-Функция filter_by_state
-Функция принимает список словарей transactions и параметр state (по умолчанию 'EXECUTED'). Возвращает новый список словарей, содержащий только те операции, у которых ключ state равен переданному значению.
-
+Функции и генераторы
+Модуль processing
+filter_by_state: Функция для фильтрации транзакций по состоянию.
+sort_by_date: Функция для сортировки транзакций по дате.
+Модуль generators
+filter_by_currency: Функция для фильтрации транзакций по валюте.
+transaction_descriptions: Генератор для получения описаний транзакций.
+card_number_generator: Генератор для генерации номеров банковских карт.
+Примеры использования
+filter_by_state
 python
+
+Verify
+
+Open In Editor
+Edit
 Copy code
 from src.processing.processing import filter_by_state
 
@@ -28,10 +40,13 @@ transactions = [
 filtered_transactions = filter_by_state(transactions, state='EXECUTED')
 print(filtered_transactions)
 # [{'id': 1, 'state': 'EXECUTED', 'date': '2023-01-01'}]
-Функция sort_by_date
-Функция принимает список словарей transactions и параметр reverse (по умолчанию True). Возвращает новый список словарей, отсортированный по полю date.
-
+sort_by_date
 python
+
+Verify
+
+Open In Editor
+Edit
 Copy code
 from src.processing.processing import sort_by_date
 
@@ -44,17 +59,14 @@ sorted_transactions = sort_by_date(transactions)
 print(sorted_transactions)
 # [{'id': 1, 'state': 'EXECUTED', 'date': '2023-01-01'},
 #  {'id': 2, 'state': 'EXECUTED', 'date': '2022-01-01'}]
+filter_by_currency
+python
 
+Verify
 
-# Модуль generators
-
-Модуль `generators` содержит функции и генераторы для работы с массивами транзакций. Он позволяет финансовым аналитикам быстро и удобно находить нужную информацию о транзакциях и проводить анализ данных.
-
-## Функция `filter_by_currency`
-
-Функция `filter_by_currency` принимает на вход список словарей, представляющих транзакции, и возвращает итератор, который поочередно выдает транзакции, где валюта операции соответствует заданной. Например:
-
-```python
+Open In Editor
+Edit
+Copy code
 transactions = [
     # ... список транзакций ...
 ]
@@ -62,92 +74,47 @@ transactions = [
 usd_transactions = filter_by_currency(transactions, "USD")
 for _ in range(2):
     print(next(usd_transactions))
+transaction_descriptions
+python
 
-Вывод:
+Verify
 
-{
-  "id": 939719570,
-  "state": "EXECUTED",
-  "date": "2018-06-30T02:08:58.425572",
-  "operationAmount": {
-      "amount": "9824.07",
-      "currency": {
-          "name": "USD",
-          "code": "USD"
-      }
-  },
-  "description": "Перевод организации",
-  "from": "Счет 75106830613657916952",
-  "to": "Счет 11776614605963066702"
-}
-{
-  "id": 142264268,
-  "state": "EXECUTED",
-  "date": "2019-04-04T23:20:05.206878",
-  "operationAmount": {
-      "amount": "79114.93",
-      "currency": {
-          "name": "USD",
-          "code": "USD"
-      }
-  },
-  "description": "Перевод со счета на счет",
-  "from": "Счет 19708645243227258542",
-  "to": "Счет 75651667383060284188"
-}
-
-Генератор transaction_descriptions
-Генератор transaction_descriptions принимает список словарей с транзакциями и возвращает описание каждой операции по очереди. Например:
-
+Open In Editor
+Edit
+Copy code
 descriptions = transaction_descriptions(transactions)
 for _ in range(5):
     print(next(descriptions))
+card_number_generator
+python
 
-Вывод:
+Verify
 
-Перевод организации
-Перевод со счета на счет
-Перевод со счета на счет
-Перевод с карты на карту
-Перевод организации
-
-Генератор card_number_generator
-Генератор card_number_generator выдает номера банковских карт в формате XXXX XXXX XXXX XXXX, где X — цифра номера карты. Генератор может сгенерировать номера карт в заданном диапазоне от 0000 0000 0000 0001 до 9999 9999 9999 9999. Например:
-
+Open In Editor
+Edit
+Copy code
 for card_number in card_number_generator(1, 5):
     print(card_number)
-
-Вывод:
-
-0000 0000 0000 0001
-0000 0000 0000 0002
-0000 0000 0000 0003
-0000 0000 0000 0004
-0000 0000 0000 0005
-
 Тестирование
-В этом разделе представлены результаты тестирования функций filter_by_state и sort_by_date из модуля processing.
+В этом проекте использовался фреймворк pytest для тестирования функций filter_by_state и sort_by_date. Результаты тестирования представлены в следующем отчете:
 
-Результаты тестирования
-Тестирование проводилось с использованием фреймворка pytest и охватывало все функции из модуля processing. Результаты тестирования представлены в следующем отчете:
 
-Testing started at 11:43 ...
+Verify
+
+Open In Editor
+Edit
+Copy code
+Testing started at 12:34 ...
 Launching pytest with arguments --no-header --no-summary -q in C:\Users\rabbi\PycharmProjects\homework_10-2
 
 ============================= test session starts =============================
-collecting ... collected 4 items
+collecting ... collected 5 items
 
-tests/test_generators.py::test_filter_by_currency[USD-expected_result0] PASSED [ 25%]
-tests/test_generators.py::test_transaction_descriptions[transactions0-expected_result0] PASSED [ 50%]
-tests/test_processing.py::test_sort_by_date[expected_ids0-True] PASSED   [ 75%]
+decorators/test_logger.py::test_log_decorator PASSED                     [ 20%]
+tests/test_generators.py::test_filter_by_currency[USD-expected_result0] PASSED [ 40%]
+tests/test_generators.py::test_transaction_descriptions[transactions0-expected_result0] PASSED [ 60%]
+tests/test_processing.py::test_sort_by_date[expected_ids0-True] PASSED   [ 80%]
 tests/test_processing.py::test_sort_by_date[expected_ids1-False] PASSED  [100%]
 
-============================== 4 passed in 0.03s ==============================
-
-Process finished with exit code 0
-
+============================== 5 passed in 0.05s ==============================
 Все тесты прошли успешно, что свидетельствует о правильной работе функций filter_by_state и sort_by_date.
-
-Вывод
-Результаты тестирования показывают, что функции filter_by_state и sort_by_date из модуля processing работают корректно и соответствуют заданным требованиям.
-
